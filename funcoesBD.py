@@ -23,7 +23,8 @@ def update(telefone,status):
 
 def consultatotal():
     telefones = Telefones.query.all()
-    print(telefones[3].fone)
+    for t in telefones:
+        print(t.id,t.ddd,t.fone,t.valido)
 
 
 
