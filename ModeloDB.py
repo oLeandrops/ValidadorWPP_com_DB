@@ -1,4 +1,4 @@
-from sqlalchemy import Column, create_engine,Integer,String
+from sqlalchemy import Column, create_engine,Integer,String,Date
 from sqlalchemy.orm import scoped_session,sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -20,7 +20,9 @@ class Telefones(base):
     id = Column(Integer, primary_key = True)
     ddd = Column(String(2))
     fone = Column(String(11), index = True)
-    valido = Column(Integer)
+    valido = Column(String(10))
+    data = Column(String(20))
+    numeroJob = Column(String(20))
 
     def __repr__(self):
         return f'{self.ddd}{self.fone}'
