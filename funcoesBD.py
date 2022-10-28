@@ -37,6 +37,6 @@ def consultatotal():
 
 if __name__ == '__main__':
     #insert('11','979529488', data='03-08-2022',job='jobteste')
-    consulta()
+    print(consulta())
     #update('14991326630',None)
     #consultatotal()
