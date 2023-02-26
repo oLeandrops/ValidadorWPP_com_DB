@@ -23,7 +23,7 @@ def insert(ddd,fone,data='00-00-0000' ,job=None):
     print('Inserido os dados com sucesso')
 
 def update(telefone,status):
-    telefones = Telefones.query.filter_by(ddd = telefone[0:2],fone = telefone[2:]).first()
+    telefones = Telefones.query.filter_by(ddd = telefone[0:2],fone = telefone[2:], valido=None).first()
     telefones.valido = status
     telefones.save()
     print('Tefone Validado')
@@ -37,6 +37,6 @@ def consultatotal():
 
 if __name__ == '__main__':
     #insert('11','979529488', data='03-08-2022',job='jobteste')
-    print(consulta())
+    #print(consulta())
     #update('14991326630',None)
-    #consultatotal()
+    consultatotal()
