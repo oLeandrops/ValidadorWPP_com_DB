@@ -41,9 +41,16 @@ while resposta == 'SIM':
             menu = browser.find_element(By.CSS_SELECTOR, '#main')
             menu.find_element(By.CSS_SELECTOR, 'div[data-testid="conversation-menu-button"] ').click()
             sleep(0.5)
-            browser.find_elements(By.CSS_SELECTOR, 'li')[-1].click()
+            browser.find_elements(By.CSS_SELECTOR, 'li')[-3].click()
             sleep(0.5)
-            browser.find_element(By.CSS_SELECTOR, 'div[class*="_2Zdgs"]').click()
+            if browser.find_elements(By.CSS_SELECTOR, 'div[class*="_2Zdgs"]'):
+                browser.find_element(By.CSS_SELECTOR, 'div[class*="_2Zdgs"]').click()
+            elif browser.find_elements(By.CSS_SELECTOR,'div[class*="tvf2evcx"]'):
+                browser.find_element(By.CSS_SELECTOR,'div[class*="tvf2evcx"] div[data-testid*="ok"').click()
+            elif browser.find_elements(By.CSS_SELECTOR,'div[class*="p357zi0d"]'):
+                browser.find_element(By.CSS_SELECTOR,'div[class*="p357zi0d"]').click()
+            else:
+                print('não encontrei nenhum elemento')
             sleep(0.5)
             if len(browser.find_elements(By.CSS_SELECTOR, 'div[class*="_2Zdgs"]')) >0:
                 browser.find_element(By.CSS_SELECTOR, 'div[class*="_2Zdgs"]').click()

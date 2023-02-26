@@ -9,5 +9,6 @@ engine = create_engine(
 conexao_sa = engine.connect()
 
 telefones = pd.read_sql_table('telefones',conexao_sa,index_col='id')
-telefones = telefones.query('data=="24-10-2022"')
+telefones = telefones.query('data=="26-2-2023"')
+#telefones.to_excel(f'Bases_Validadas/base_71902.xlsx')
 telefones.to_excel(f'Bases_Validadas/base_{str(telefones.iloc[1,4])}.xlsx')
